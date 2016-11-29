@@ -49,11 +49,10 @@ function GET_GENERAL_UNIVERSITY_DETAILS(code) {
             "SELECT * " + 
             "WHERE { ?U a univ:University; " + 
                 "univ:id ?univ_id; " +
-                "univ:name ?univ_name; " + 
-                "univ:street_address ?street; " +
+                "univ:name ?uname; " + 
+                "OPTIONAL{ ?U univ:street_address ?street; " +
                 "univ:state ?state; " +
                 "univ:zip ?zip; " +
-                "univ:alias ?alias; " +
                 "univ:control ?control; " +
                 "univ:internetWebsite ?internetWebsite; " +
                 "univ:financialAidOfficeWebsite ?financialAidOfficeWebsite; " +
@@ -64,7 +63,7 @@ function GET_GENERAL_UNIVERSITY_DETAILS(code) {
                 "univ:level ?level; " +
                 "univ:longitude ?longitude; " +
                 "univ:latitude ?latitude. " +
-                "FILTER( ?univ_id = '" + code + "' && strlen(?zip)=5)" + 
+                "}FILTER( ?univ_id = '" + code + "' )" + 
             "}") +
         QUERY_POSTFIX
 }

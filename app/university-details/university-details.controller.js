@@ -128,6 +128,14 @@
             return $http.get(GET_GENERAL_UNIVERSITY_DETAILS(vm.univId)).success(function(data){
                 console.log(data);
                 var univGeneralDetails = data.results.bindings[0];
+                vm.name = univGeneralDetails.uname.value;
+                vm.street = univGeneralDetails.street.value;
+                vm.state = univGeneralDetails.state.value;
+                vm.zip = univGeneralDetails.zip.value;
+                vm.internetWebsite = univGeneralDetails.internetWebsite.value;
+                vm.admissionOfficeWebsite = univGeneralDetails.admissionOfficeWebsite.value;
+                vm.applicationWebsite = univGeneralDetails.applicationWebsite.value;
+                vm.financialAidOfficeWebsite = univGeneralDetails.financialAidOfficeWebsite.value;
                 vm.title4 = univGeneralDetails.opeTitle.value;
                 vm.sector = univGeneralDetails.sector.value;
                 vm.level = univGeneralDetails.level.value;

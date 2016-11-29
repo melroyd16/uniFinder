@@ -2,9 +2,11 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel univ_info_panel">
-                <div class="univ_name">Arizona State University</div>
-                <div>1137 E Orange Street, Tempe, Arizona 85281</div>
-                <div><a href={{ "http://www.asu.edu"}}>www.asu.edu</a></div>
+                <div class="univ_name" ng-bind="univDCtrl.name"/>
+                <div><span ng-bind="univDCtrl.street"/>, <span ng-bind="univDCtrl.state"/> - <span ng-bind="univDCtrl.zip"/></div>
+                <div><a href="{{(univDCtrl.internetWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.internetWebsite: univDCtrl.internetWebsite}}">
+                    {{(univDCtrl.internetWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.internetWebsite: univDCtrl.internetWebsite}}
+                    </a></div>
             </div>
         </div>
         <div class="col-md-6">
@@ -21,6 +23,33 @@
                     <tr>
                         <td>Level</td>
                         <td ng-bind="univDCtrl.level"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Important Links</th>
+                    </tr>
+                    <tr>
+                        <td>Admission Office</td>
+                        <td>
+                            <a href="{{(univDCtrl.admissionOfficeWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.admissionOfficeWebsite : univDCtrl.admissionOfficeWebsite}}">
+                            {{(univDCtrl.admissionOfficeWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.admissionOfficeWebsite: univDCtrl.admissionOfficeWebsite}}
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Application Website</td>
+                        <td>
+                            <a href="{{(univDCtrl.applicationWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.applicationWebsite : univDCtrl.applicationWebsite}}">
+                            {{(univDCtrl.applicationWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.applicationWebsite: univDCtrl.applicationWebsite}}
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Financial Aid Office Website</td>
+                        <td>
+                            <a href="{{(univDCtrl.financialAidOfficeWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.financialAidOfficeWebsite : univDCtrl.financialAidOfficeWebsite}}">
+                            {{(univDCtrl.financialAidOfficeWebsite.substring(0,3) === 'www')?'http://'+univDCtrl.financialAidOfficeWebsite: univDCtrl.financialAidOfficeWebsite}}
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
