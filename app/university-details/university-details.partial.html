@@ -1,0 +1,73 @@
+<div class="initial-holder">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel univ_info_panel">
+                <div class="univ_name">Arizona State University</div>
+                <div>1137 E Orange Street, Tempe, Arizona 85281</div>
+                <div><a href={{ "http://www.asu.edu"}}>www.asu.edu</a></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td>Title IV Institution</td>
+                        <td ng-bind="univDCtrl.title4"></td>
+                    </tr>
+                    <tr>
+                        <td>Sector</td>
+                        <td ng-bind="univDCtrl.sector"></td>
+                    </tr>
+                    <tr>
+                        <td>Level</td>
+                        <td ng-bind="univDCtrl.level"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <span class="col-md-10">Climatic conditions</span><span class="glyphicon glyphicon-minus"></span>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+                <div class="row climate-chart-row">
+                    <div id="minTempChartContainer" class="col-md-5 col-sm-offset-1"></div>
+                    <div id="maxTempChartContainer" class="col-md-5"></div>
+                </div>
+                <div class="row climate-chart-row">
+                    <div id="meanTempChartContainer" class="col-md-5 col-sm-offset-1"></div>
+                    <div id="avgSnowfallChartContainer" class="col-md-5"></div>
+                </div>
+                <div class="row climate-chart-row">
+                    <div id="avgRainfallChartContainer" class="col-md-5 col-sm-offset-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" ng-click="univSCtrl.initialize()">
+        <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <span class="col-md-10">Climate</span><span class="glyphicon glyphicon-minus"></span>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
+                hello
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <span class="col-md-10">Tuition Fees</span> <span class="glyphicon glyphicon-minus"></span>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+                hello
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "name": "University Match",
+  "version": "0.0.0",
+  "authors": [
+    "Alfred Gonsalves",
+    "Aditya Nimbalkar",
+    "Raj Dalvi",
+    "Melroy Dmello"
+  ],
+  "description": "A semantic web application which helps a student select a prospective university based on their preferences",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.8",
+    "bootstrap": "~3.3.7",
+    "jquery": "~3.1.1",
+    "angular-ui-router": "~0.3.2",
+    "angularjs-slider": "~5.8.7",
+    "angular-sanitize": "~1.5.8",
+    "angular-perfect-scrollbar": "~0.0.4",
+    "ng-tags-input": "~3.1.1",
+    "angular-tags": "~0.2.10",
+    "ui-bootstrap": "~2.2.0",
+    "angularjs-typeahead-dropdown": "~1.0.2",
+    "fusioncharts": "~3.11.3"
+  }
+}

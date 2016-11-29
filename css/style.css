@@ -1,0 +1,252 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+/* line 7, ../sass/_welcome.scss */
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+/* line 18, ../sass/_welcome.scss */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+/* line 28, ../sass/_welcome.scss */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* line 32, ../sass/_welcome.scss */
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* line 36, ../sass/_welcome.scss */
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+/* line 46, ../sass/_welcome.scss */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+
+/* Since positioning the image, we need to help out the caption */
+/* line 53, ../sass/_welcome.scss */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+/* line 59, ../sass/_welcome.scss */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+/* line 63, ../sass/_welcome.scss */
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+/* Center align the text within the three columns below the carousel */
+/* line 77, ../sass/_welcome.scss */
+.marketing {
+  margin-top: 50px;
+  min-height: 575px;
+}
+
+/* line 81, ../sass/_welcome.scss */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* line 85, ../sass/_welcome.scss */
+.marketing h2 {
+  font-weight: normal;
+}
+
+/* line 88, ../sass/_welcome.scss */
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* line 92, ../sass/_welcome.scss */
+footer {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+/* Featurettes
+------------------------- */
+/* line 100, ../sass/_welcome.scss */
+.featurette-divider {
+  margin: 80px 0;
+  /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* line 107, ../sass/_welcome.scss */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  /* line 118, ../sass/_welcome.scss */
+  .navbar-wrapper {
+    margin-top: 0px;
+  }
+
+  /* line 121, ../sass/_welcome.scss */
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  /* line 125, ../sass/_welcome.scss */
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  /* line 130, ../sass/_welcome.scss */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  /* line 134, ../sass/_welcome.scss */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  /* line 139, ../sass/_welcome.scss */
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 144, ../sass/_welcome.scss */
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+/* line 1, ../sass/_university-search.scss */
+.univ-search-container {
+  margin-top: 30px;
+}
+/* line 3, ../sass/_university-search.scss */
+.univ-search-container .slider-filter {
+  margin-top: 20px;
+}
+/* line 6, ../sass/_university-search.scss */
+.univ-search-container .ajax-loader {
+  margin-left: 250px;
+  margin-top: 200px;
+}
+
+/* line 11, ../sass/_university-search.scss */
+#pagination-container {
+  text-align: right;
+  margin: 25px 60px;
+}
+
+/* line 15, ../sass/_university-search.scss */
+#pagination-container .drop-down {
+  margin-left: 50px;
+}
+
+/* line 18, ../sass/_university-search.scss */
+.super-class {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* line 22, ../sass/_university-search.scss */
+.scroller {
+  height: 500px;
+  overflow-y: hidden;
+  position: relative;
+}
+/* line 26, ../sass/_university-search.scss */
+.scroller .univ-row {
+  cursor: pointer;
+}
+/* line 29, ../sass/_university-search.scss */
+.scroller .univ-row:hover {
+  cursor: pointer;
+}
+
+/* line 33, ../sass/_university-search.scss */
+.pagination-panel {
+  background-color: #F7FAFD;
+}
+
+/* line 36, ../sass/_university-search.scss */
+.state-tag-container {
+  margin-top: 15px;
+}
+/* line 38, ../sass/_university-search.scss */
+.state-tag-container .state-tags {
+  display: inline;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 8px;
+  float: left;
+}
+/* line 44, ../sass/_university-search.scss */
+.state-tag-container .state-tags .cross {
+  text-align: right;
+  margin-left: 5px;
+}
+
+/* line 50, ../sass/_university-search.scss */
+.clear-all-states {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* line 1, ../sass/_university-details.scss */
+.initial-holder {
+  margin-top: 20px;
+}
+/* line 4, ../sass/_university-details.scss */
+.initial-holder .univ_info_panel .univ_name {
+  font-size: 40px;
+}
+
+/* line 9, ../sass/_university-details.scss */
+.climate-chart-row {
+  margin-top: 20px;
+}

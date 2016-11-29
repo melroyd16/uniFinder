@@ -1,0 +1,53 @@
+.univ-search-container {
+    margin-top: 30px;
+    .slider-filter {
+        margin-top: 20px;
+    }
+    .ajax-loader {
+        margin-left: 250px;
+        margin-top: 200px;
+    }
+}
+#pagination-container {
+    text-align: right;
+    margin: 25px 60px;
+}
+#pagination-container .drop-down {
+    margin-left: 50px;
+}
+.super-class {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.scroller {
+    height: 500px;
+    overflow-y: hidden;
+    position: relative;
+    .univ-row{
+        cursor: pointer;
+    }
+    .univ-row:hover {
+        cursor: pointer;
+    }
+}
+.pagination-panel {
+    background-color: #F7FAFD
+}
+.state-tag-container {
+    margin-top: 15px;
+    .state-tags {
+        display: inline;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        padding: 8px;
+        float: left;
+        .cross {
+            text-align: right;
+            margin-left: 5px;
+        }
+    }
+}
+.clear-all-states{
+    cursor: pointer;
+    margin-top: 10px;
+}

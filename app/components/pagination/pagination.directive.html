@@ -1,0 +1,17 @@
+<div id="pagination-container">
+    <span>Display 
+        <select ng-options="option for option in pageLimitOptions"
+          ng-model="pageSize">
+        </select>
+        Results Per Page
+    </span>
+
+    <span class="drop-down">
+        Displaying Results
+        <select ng-model="offset"
+                ng-options="option.offset as option.text for option in paginationDropDown"
+                ng-disabled="paginationDropDown.length <=1">
+        </select>
+        Out of {{listSize}}
+    </span>
+</div>

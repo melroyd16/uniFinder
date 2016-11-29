@@ -1,0 +1,103 @@
+<div class="row univ-search-container">
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Filter Results</h3>
+            </div>
+            <div class="panel-body filter-panel">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span class="col-md-10">Location</span><span class="glyphicon glyphicon-minus"></span>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div ng-if="univSCtrl.displayDuplicateState" class="alert alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    State already added
+                                </div>
+                                <typeahead-dropdown id="ex1"  ng-model="univSCtrl.selectedState" options="univSCtrl.stateOptions" config="univSCtrl.stateConfig" events="univSCtrl.stateEvents"></typeahead-dropdown>
+                                <div ng-if="univSCtrl.selectedStates.length > 0" class="clear-all-states">
+                                    <span><a ng-click="univSCtrl.clearAllStates()">Clear All</a></span>
+                                </div>
+                                <div class="state-tag-container">
+                                    <div class="alert alert-info state-tags" ng-repeat="state in univSCtrl.selectedStates">
+                                        {{state.text}}<span style="text-align:right" class="glyphicon glyphicon-remove cross" ng-click="univSCtrl.removeState(state.text)"></span>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" ng-click="univSCtrl.initialize()">
+                        <div class="panel-heading" role="tab" id="headingTwo" data-toggle="collapse" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <span class="col-md-10">Climate</span><span class="glyphicon glyphicon-minus"></span>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="clear-all-states">
+                                    <span><a ng-click="univSCtrl.initializeWeather()">Reset All</a></span>
+                                </div>
+                                <div class="slider-filter">Minimum Temperature</div>
+                                <rzslider rz-slider-model="univSCtrl.minTempSlider.min" rz-slider-high="univSCtrl.minTempSlider.max" rz-slider-options="univSCtrl.minTempSlider.options"></rzslider>
+                                <div class="slider-filter">Maximum Temperature</div>
+                                <rzslider rz-slider-model="univSCtrl.maxTempSlider.min" rz-slider-high="univSCtrl.maxTempSlider.max" rz-slider-options="univSCtrl.maxTempSlider.options"></rzslider>
+                                <div class="slider-filter">Mean Temperature</div>
+                                <rzslider rz-slider-model="univSCtrl.meanTempSlider.min" rz-slider-high="univSCtrl.meanTempSlider.max" rz-slider-options="univSCtrl.meanTempSlider.options"></rzslider>
+                                <div class="slider-filter">Total Annual Rainfall</div>
+                                <rzslider rz-slider-model="univSCtrl.rainfallSlider.min" rz-slider-high="univSCtrl.rainfallSlider.max" rz-slider-options="univSCtrl.rainfallSlider.options"></rzslider>
+                                <div class="slider-filter">Total Annual Snowfall</div>
+                                <rzslider rz-slider-model="univSCtrl.snowfallSlider.min" rz-slider-high="univSCtrl.snowfallSlider.max" rz-slider-options="univSCtrl.snowfallSlider.options"></rzslider>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree" data-toggle="collapse" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <span class="col-md-10">Tuition Fees</span> <span class="glyphicon glyphicon-minus"></span>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                Fees Filters appear here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <img class="ajax-loader" src="../../images/loader.gif" ng-if="univSCtrl.displayLoader">
+        <div ng-if="!univSCtrl.displayLoader">
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" placeholder="Search for university" ng-model="univSCtrl.uniNameFilter" />
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info pagination-panel" ng-if="univSCtrl.filteredUniversities.length>0">
+                <div class="row">
+                    <pagination1 page-size="univSCtrl.pageSize" offset="univSCtrl.pageOffset" list-size="univSCtrl.filteredUniversities.length">
+                    </pagination1>
+                </div>
+            </div>
+            <div ng-if="!(univSCtrl.filteredUniversities.length>0)">
+                <div class="alert alert-danger">No Universities Found</div>
+            </div>
+            <div>
+                <perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="1" min-scrollbar-length="20">
+                    <div class="univ-row" ng-repeat="university in univSCtrl.filteredUniversities = (univSCtrl.universitiesList
+                                  | filter : univSCtrl.uniNameFilter
+                                  ) | orderBy:'univ_name' | limitTo : univSCtrl.pageSize:univSCtrl.pageOffset" ng-click="univSCtrl.viewUniversityDetails(university)">
+                        <div ng-bind-html="university.univ_name.value | searchBoldfilter:univSCtrl.uniNameFilter"></div>
+                        <hr/>
+                    </div>
+                </perfect-scrollbar>
+            </div>
+        </div>
+    </div>
+</div>
